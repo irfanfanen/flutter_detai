@@ -1,0 +1,70 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: Home(),);
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My Class"),
+      ),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Column(
+                children: [
+                  Text("All")
+                ],
+              ),
+              Text("In-Progress"),
+              Text("Completed")
+            ],
+          ),
+          Row(
+            children: [
+              Container(width: 80, height: 80, decoration: BoxDecoration(border: Border.all(color: Colors.black)),),
+              Column(
+                children: [
+                  Text("Mastering UI Design With Sketch"),
+                  Text("Udacoding"),
+                  Row(
+                    children: [
+                      Stack(
+                        children: [
+                          Container(width: 190, height: 5, decoration: BoxDecoration(color: Colors.black),),
+                          Container(width: 180, height: 5, decoration: BoxDecoration(color: Colors.white),)
+                        ],
+                      ),
+                      Text("90%")
+                    ],
+                  )
+                ],
+              )
+            ],
+          )
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.black,), label: ""),
+        BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
+        BottomNavigationBarItem(icon: Icon(Icons.play_arrow), label: ""),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+      ]),
+    );
+  }
+}
